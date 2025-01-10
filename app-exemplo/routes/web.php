@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\JogosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +22,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('jogos', ['idJogo' => $id, 'nomeJogo' => $name]);
 // }) -> where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
 
-Route::view('/jogos', 'jogos')->name('jogos-view');
+// Route::view('/jogos', 'jogos')->name('jogos-view');
+
+Route::get('/jogos', [JogosController::class, 'index']);
 
 Route::view('/home', 'welcome')->name('home-index');
 
-
 Route::fallback(function(){
-    return 'Erro!';
+    return 'Página não encontrada';
 });

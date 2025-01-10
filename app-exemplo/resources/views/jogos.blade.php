@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>Jogos</h1>
-
+    <h1>Testando routes com view</h1>
+    <p>Id: {{ $id }}</p>
+    <p>Nome: {{ $nome }} </p>
     <a href="{{ route('home-index') }}">Ir para Home</a>    
 </body>
 </html>
