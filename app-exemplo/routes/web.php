@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+
+// Route::view('/jogos', 'jogos', ['name' => 'GTA']);
+
+// Route::get('/jogos/{id?}/{name?}', function ($id = null, $name = null){
+//     return view('jogos', ['idJogo' => $id, 'nomeJogo' => $name]);
+// }) -> where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
+
+Route::view('/jogos', 'jogos')->name('jogos-view');
+
+Route::view('/home', 'welcome')->name('home-index');
+
+
+Route::fallback(function(){
+    return 'Erro!';
 });
